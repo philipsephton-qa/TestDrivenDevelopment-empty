@@ -1,5 +1,8 @@
 package com.qa.testdrivendevelopment;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class Questions {
 
 	/**
@@ -27,9 +30,19 @@ public class Questions {
 	 * multChar("AAbb") → "AAAAAAbbbbbb"<br>
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
+	
 	public String multiChar(String input) {
-		return "";
+		String str = input;
+		String result = "";
+		for (int i = 0; i < str.length(); i++) {
+		    result= result + str.charAt(i) + str.charAt(i) + str.charAt(i);
+		}
+		return result;
+
+		
 	}
+		
+	
 
 	/**
 	 * Return the string (backwards) that is between the first and last appearance
@@ -45,7 +58,17 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-		return "";
+	/*	String newSandwich = sandwich.toLowerCase();
+		String[] arr = newSandwich.split("bread");
+		String newstring = arr[1];
+		int countstring = newstring.length;
+		System.out.println(countstring);
+		String ans = "";
+		for(int c = countstring - 1 ; c == 0; c--){
+			ans = newstring[c] + "";
+		}
+		System.out.println(ans);
+		return ans; */
 	}
 
 	/**
@@ -61,8 +84,14 @@ public class Questions {
 	 * evenlySpaced(4, 60, 9) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
-	}
+		int d = (a + b + c)/3;
+		if(d == a || d == b || d == c) {return true;}
+		else {return false;}}
+//		if(d == a) {return true;}
+//		else if(d == b) {return true;}
+//		else if(d == c) {return true;}
+//		else {return false;}
+		
 
 	/**
 	 * Given a string and an int n, return a string that removes n letters from
