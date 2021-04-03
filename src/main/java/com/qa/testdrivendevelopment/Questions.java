@@ -1,5 +1,6 @@
 package com.qa.testdrivendevelopment;
 
+import java.lang.reflect.Array;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -58,17 +59,16 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-	/*	String newSandwich = sandwich.toLowerCase();
+		String newSandwich = sandwich.toLowerCase();
 		String[] arr = newSandwich.split("bread");
 		String newstring = arr[1];
-		int countstring = newstring.length;
+		int countstring = newstring.length();
 		System.out.println(countstring);
 		String ans = "";
 		for(int c = countstring - 1 ; c == 0; c--){
-			ans = newstring[c] + "";
+			Array ans1[] = countstring[c] + "";
 		}
-		System.out.println(ans);
-		return ans; */
+		return ans1[]; 
 	}
 
 	/**
@@ -83,10 +83,10 @@ public class Questions {
 	 * evenlySpaced(4, 6, 3) → false<br>
 	 * evenlySpaced(4, 60, 9) → false
 	 */
-	public boolean evenlySpaced(int a, int b, int c) {
-		int d = (a + b + c)/3;
+	public boolean evenlySpaced(double a, double b, double c) {
+		double d = (a + b + c)/3;
 		if(d == a || d == b || d == c) {return true;}
-		else {return false;}}
+		else{return false;}}
 //		if(d == a) {return true;}
 //		else if(d == b) {return true;}
 //		else if(d == c) {return true;}
@@ -121,7 +121,10 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
-    	return false;
+		String lowinput = input.toLowerCase();
+		boolean bool = lowinput.endsWith("java");
+		return bool;
+		
 	}
 
 	/**
@@ -136,7 +139,28 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
-    	return -1;
+		int count = 0;
+		int max = 0;
+		for(int i=0; i<input.length(); i++){	
+			if(i==0){
+				count++;
+				max = count;
+			}
+			else{
+				if(input.charAt(i)==input.charAt(i-1)){
+					count++;
+					if(max<count){
+						max = count;
+					}
+				}
+				
+				else{
+					count = 1;
+				}
+			}
+			
+	}	
+		return max;
 	}
 
 	/**
@@ -208,6 +232,8 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
+		String word1 = word.toLowerCase();
+		
     	return false;
 	}
 }
